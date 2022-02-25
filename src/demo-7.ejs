@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 7: Clone HTML & Append To Button on Click.</h2>
+                        <p class="text-black-50">Simply Clone from one List to another on button click.</p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                
+                                <ul id="ls1" class="list-unstyled mb-4">
+                                    <li>Coffee</li>
+                                    <li>Tea</li>
+                                </ul>
+                                <ul id="ls2" class="list-unstyled mb-4">
+                                    <li>Water</li>
+                                    <li>Milk</li>
+                                </ul>
+
+                               <button onclick="cloneFun()" class="btn btn-success ">Try it</button> 
+
+                               
+                            </div>
+                            <!-- <div class="col-lg-6" >
+                                <ul id="myList1" class="list-unstyled mb-4">
+                                    <li>Coffee</li>
+                                    <li>Tea</li>
+                                </ul>
+                                <ul id="myList2" class="list-unstyled mb-4">
+                                    <li>Water</li>
+                                    <li>Milk</li>
+                                </ul>
+                                <button onclick="inFun()" class="btn btn-dark ">Try it</button>
+                            </div> -->
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+             
+            
+
+            function cloneFun(){
+                 var ls2 = document.getElementById("ls2").lastElementChild;
+                 var ls1 = document.getElementById("ls1");
+                 
+                //  var c = ls2;
+                 var c = ls2.cloneNode(true);
+                console.log(c);
+                ls1.appendChild(c);
+                
+            }
+
+        </script>
+    </body>
+
+</html>

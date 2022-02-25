@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 8: Increment Decrement Value.</h2>
+                        <p class="text-black-50">Increment Decrement value on button click. </p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnSubs()" id="btn-sub"><i class="fas fa-minus"></i></button>
+                                    <input type="text" class="form-control text-center" placeholder="" id="input1" value="0">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnAdd()" id="btn-add"><i class="fas fa-plus"></i></button>
+                                </div>
+
+                               
+
+                               
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+             
+            var btnAdd = document.getElementById("btn-add");
+            var btnSubstrac = document.getElementById("btn-sub");
+            var input = document.getElementById("input1");
+            
+            function BtnAdd(){
+                console.log(parseInt(input.value) + 1)
+                input.value = parseInt(input.value) + 1;
+            }
+            function BtnSubs(){
+                console.log(parseInt(input.value) - 1)
+                input.value = parseInt(input.value) - 1;
+            }
+            
+
+        </script>
+    </body>
+
+</html>

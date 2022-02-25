@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 9: Increment Decrement Value.</h2>
+                        <p class="text-black-50">Increment Decrement value on button click. </p>
+                        
+                        <hr class=" mb-5">
+                        
+                        <div class="row" id="rowBlock">
+                            <div class="col-lg-3 cln-block" id="clnBlock">
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnSubs(this)" id="btn-sub"><i class="fas fa-minus"></i></button>
+                                    <input type="text" class="form-control text-center" placeholder="" id="input1" value="0">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnAdd(this)" id="btn-add"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <a href="javascript:;" onclick="cloneFun()" class="btn btn-primary text-white mt-3">Add New</a>
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+
+            
+
+            
+            
+            function cloneFun(){
+                var clnBlock = document.getElementById('clnBlock');
+                var Row = document.getElementById("rowBlock");
+                var clnBlockN = clnBlock.cloneNode(true);
+                Row.appendChild(clnBlockN);
+            }
+
+            function BtnAdd(abc){
+                var a = abc.previousElementSibling;
+                console.log(a);
+                a.value = parseInt(a.value) + 1;
+                // console.log(a);
+            }
+            function BtnSubs(xyz){
+                var b = xyz.nextElementSibling;
+                console.log(b);
+                b.value = parseInt(b.value) - 1;
+            }
+            
+
+        </script>
+    </body>
+
+</html>

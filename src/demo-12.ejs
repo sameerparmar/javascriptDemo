@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 12: Double Loop</h2>
+                        
+                        <hr class=" mb-5">
+                        <div class="row mb-4">
+
+                            <div class="col-md-4">
+                                <h6 class="">Example 1</h6>
+                                <div id="ex1"></div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <h6 class="">Example 2</h6>
+                                <div id="ex2"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+
+            //Excersice 1
+            var ex1 = document.getElementById("ex1");
+            var R = '';
+
+            for(var a = 1; a <= 5; a++){
+
+                for(var b = 4; b >= a; b-- ){
+                    R += "&nbsp;&nbsp;";
+                }
+                for(var c = 1; c <= a; c++){
+                    R += "*";
+                }
+                R += "<br>";
+
+            }
+            
+            ex1.innerHTML = R;
+            
+
+            //Excersice 2
+            var ex2 = document.getElementById("ex2");
+            var R2 = '';
+
+            for(var a = 1 ; a <= 4; a++){
+
+                for(var b = 2 ; b <= a; b++){
+                    R2 += "&nbsp;";
+                }
+                for(var c = 4; c >= a; c--){
+                    R2 += "*";
+                }
+                R2 += "<br>";
+            }
+            ex2.innerHTML = R2;
+        </script>
+    </body>
+
+</html>

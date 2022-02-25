@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    <body>
+        <div class="js-main-wrapper">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 3</h2>
+                        <p class="text-black-50">Show result of Price into Quantity.</p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5>Method 1</h5>
+                                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label for="">Price</label>
+                                        <input type="text" onkeyup="amount()" value="0" class="form-control mb-3" id="inputPrice">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="">Quantity</label>
+                                        <input type="text" onkeyup="amount()" value="0" class="form-control mb-3" id="inputQnt">
+                                    </div>
+                                    <div class="col-g-12">
+                                        <p class="h6 text-gray-100" id="result">Total Amount: <span id="viewR" class="text-success"></span></p>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+            var p = document.getElementById("inputPrice");
+            var q = document.getElementById("inputQnt");
+            var r = document.getElementById("viewR");
+            
+
+            function amount(){
+                r.innerHTML = p.value * q.value;
+            };
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    <body>
+        <div class="js-main-wrapper">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 5: Add Dropdown menu and make Time Converter.</h2>
+                        <p class="text-black-50">Add Dropdown menu to Celsius to Fahrenheit converter where user can select time converter. Make time converter - from Second to Minute and set default seconds value to 3600.
+                        </p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5>Method 1</h5>
+                                
+                                <div class="row">
+                                    <div class="col-lg-12 mb-3">
+                                        <select name="" id="mySelect" onchange="myConverter()" class="form-control ">
+                                            <option value="temprature">Temprature</option>
+                                            <option value="time">Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        
+                                        <input type="text" oninput="calculateInput1Data()" value="0" class="form-control" id="input1">
+                                        <select name="" id="selectSub1" class="form-control " disabled>
+                                            <option value="celsius">Celsius</option>
+                                            <option value="second">Second</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <input type="text" oninput="calculateInput2Data()" value="0" class="form-control" id="input2">
+                                        <select name="" id="selectSub2" class="form-control" disabled>
+                                            <option value="fahrenheit">Fahrenheit</option>
+                                            <option value="minute">Minute</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+            
+            var mS = document.getElementById("mySelect");
+            var sS1 = document.getElementById("selectSub1");
+            var sS2 = document.getElementById("selectSub2");
+            var inp1 = document.getElementById("input1");
+            var inp2 = document.getElementById("input2");
+
+            function myConverter(){
+                console.log(mS.value);
+                if (mS.value === 'time'){
+                    sS1.value = 'second';
+                    sS2.value = 'minute';
+                    inp1.value = 3600;
+                    // var minV = (inp1.value / 60) ;
+                    // inp2.value = minV ;
+                    inp2.value = 60 ;
+                    
+                }else{
+                    sS1.value = 'celsius';
+                    sS2.value = 'fahrenheit';
+                    inp1.value = 0;
+                    // var fernV = (inp1.value * 9/5) + 32;
+                    // inp2.value = fernV ;
+                    inp2.value = 32 ;  
+                }
+            }
+
+            function calculateInput1Data(){
+               
+                if (mS.value === 'time'){
+                    // console.log( 'time');
+                    var minV = (inp1.value / 60) ;
+                    inp2.value = minV ;
+
+                }else{
+                    // console.log( 'temprature');
+                    var fernV = (inp1.value * 9/5) + 32;
+                    inp2.value = fernV ;
+                }
+            }
+
+            function calculateInput2Data(){
+                if (mS.value === 'time'){
+                    // console.log( 'time');
+                    var secV = (inp2.value * 60) ;
+                    inp1.value = secV ;
+
+                }else{
+                    // console.log( 'temprature');
+                    var celV = (inp2.value - 32) * 5/9;
+                    inp1.value = celV ;
+                }
+            }
+
+            
+            
+            
+
+        </script>
+    </body>
+
+</html>
