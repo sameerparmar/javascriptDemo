@@ -119,6 +119,16 @@ mix.webpackConfig({
             template: "ejs-compiled-loader!./src/demo-12.ejs",
             filename: "demo-12.html",
             inject: false
+        }),
+        new HtmlWebpackPlugin({
+            template: "ejs-compiled-loader!./src/demo-13.ejs",
+            filename: "demo-13.html",
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            template: "ejs-compiled-loader!./src/demo-14.ejs",
+            filename: "demo-14.html",
+            inject: false
         })
         
     ],
