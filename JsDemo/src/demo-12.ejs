@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<% include /src/include/head.ejs %>
+	
+	<body>
+		
+		<div class="js-main-wrapper" id="demo-6">
+			<% include /src/include/header.ejs %>
+
+			<main class="js-main-content">
+				<header class="js-main-con-header"></header>
+				<section class="js-main-conainer">
+					<div class="container">
+						<h2 class="">Demo 12: Double Loop</h2>
+						
+						<hr class=" mb-5">
+						<div class="row mb-4">
+
+							<div class="col-md-4">
+								<h6 class="">Example 1</h6>
+								<div id="ex1"></div>
+							</div>
+
+							<div class="col-md-4">
+								<h6 class="">Example 2</h6>
+								<div id="ex2"></div>
+							</div>
+
+							<div class="col-md-4">
+								<h6 class="">Example 3</h6>
+								<div id="ex3"></div>
+							</div>
+
+						</div>
+
+						<div class="row mb-4">
+							<div class="col-md-6">
+								<h6 class="">Example 4 : Pyramid Pattern 1</h6>
+								<div id="ex4"></div>
+							</div>
+							<div class="col-md-6">
+								<h6 class="">Example 5 : Pyramid Pattern 2</h6>
+								<div id="ex5"></div>
+							</div>
+						</div>
+
+						<div class="row mb-4">
+							<div class="col-md-6">
+								<h6 class="">Example 6 : if else Pyramid Pattern 1</h6>
+								<div id="ex6"></div>
+							</div>
+							
+						</div>	
+
+					</div>
+					
+
+				</section>
+			</main>
+			
+		</div>
+		<% include /src/include/scripts.ejs %>
+		<script>
+
+			//Excersice 1
+			var ex1 = document.getElementById("ex1");
+			var R = '';
+
+			for(var a = 1; a <= 5; a++){
+
+				for(var b = 4; b >= a; b-- ){
+					R += "&nbsp;&nbsp;";
+				}
+				for(var c = 1; c <= a; c++){
+					R += "*";
+				}
+				R += "<br>";
+
+			}
+			
+			ex1.innerHTML = R;
+			
+
+			//Excersice 2
+			var ex2 = document.getElementById("ex2");
+			var R2 = '';
+
+			for(var a = 1 ; a <= 4; a++){
+
+				for(var b = 2 ; b <= a; b++){
+					R2 += "&nbsp;";
+				}
+				for(var c = 4; c >= a; c--){
+					R2 += "*";
+				}
+				R2 += "<br>";
+			}
+			ex2.innerHTML = R2;
+
+			//Excersice 3
+
+			var ex3 = document.getElementById("ex3") ;
+
+			var R3 = '';
+
+			for(var a = 1; a <= 5; a++){
+				// console.log(a);
+				for(var b= 4; b >=a ; b--){
+
+					R3 += "&nbsp;&nbsp;" ;
+				}
+				for(var c = 1; c <= a; c++){
+					R3 += " *";
+				}
+				R3 += "<br>"
+
+			}
+
+			for (var a= 1; a <= 4; a++){
+
+				for( var b = 1; b <= a; b++){
+					R3 += "&nbsp;&nbsp;";
+				}
+				for(var c = 4; c >= a; c--){
+					R3 += " *";
+				}
+				R3 += "<br>";
+
+			}
+			ex3.innerHTML = R3 ;
+
+			//Excersice 4 : star pattern 1
+
+			var ex4 = document.getElementById("ex4");
+			var R4 = '';
+
+			for( var a = 1; a <= 5; a++){
+
+				// R4 += a;
+				for(var b = 5; b > a; b--){
+					R4 += "&nbsp;&nbsp;";
+				}
+				for(var c = 1; c <= a; c++){
+					// R4 += " " + c;
+					R4 += "&nbsp;&nbsp;*";
+				}
+				R4 += "<br>";
+			}
+
+			ex4.innerHTML = R4;
+
+			//Excersice 5
+			var ex5 = document.getElementById("ex5");
+			var R5 ='';
+
+			for( var a = 1; a <= 5; a++){
+
+				for (var b = 1; b <= a; b++){
+					R5 += "&nbsp;&nbsp;";
+				}
+
+				for(var c = 5; c >= a; c--){
+					R5 += "*&nbsp;&nbsp;";
+				}
+				R5 += "<br>";
+			}
+			ex5.innerHTML = R5;
+
+			//Excersice 6
+
+			var ex6 = document.getElementById('ex6');
+			var R6 = '';
+
+			for(var a = 1; a <= 5; a++){
+				
+				for( var b = 5; b >= 1; b--){
+
+					if ( b > a){
+						R6 += "&nbsp;&nbsp;";
+					}
+					else{
+						R6 += "&nbsp;&nbsp;*";
+					}
+				}	
+				R6 += "<br>";
+			}
+			ex6.innerHTML = R6;
+
+			
+		</script>
+	</body>
+
+</html>

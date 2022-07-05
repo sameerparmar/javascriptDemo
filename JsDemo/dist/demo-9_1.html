@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>JS Tutorial</title>
+    <link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <header class="js-side-nav">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-wrapper">
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Demo 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-2.html">Demo 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-3.html">Demo 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-4.html">Demo 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-5.html">Demo 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-6.html">Demo 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-7.html">Demo 7</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-8.html">Demo 8</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-9.html">Demo 9</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-10.html">
+                                Demo 10
+                                <small class="d-block">Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-11.html">
+                                Demo 11
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-12.html">
+                                Demo 12
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-13.html">
+                                Demo 13
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-14.html">
+                                Demo 14
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+    
+        </nav>
+</header>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 9: Increment Decrement Value.</h2>
+                        <p class="text-black-50">Increment Decrement value on button click. </p>
+                        
+                        <hr class=" mb-5">
+                        
+                        <div class="row" id="rowBlock">
+                            <div class="col-lg-3 cln-block" id="clnBlock">
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnSubs(this)" id="btn-sub"><i class="fas fa-minus"></i></button>
+                                    <input type="text" class="form-control text-center" placeholder="" id="input1" value="0">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="BtnAdd(this)" id="btn-add"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <a href="javascript:;" onclick="cloneFun()" class="btn btn-primary text-white mt-3">Add New</a>
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <script src="js/app.js"></script>
+<script src="js/vendor.js"></script>
+        <script>
+
+            
+
+            
+            
+            function cloneFun(){
+                var clnBlock = document.getElementById('clnBlock');
+                var Row = document.getElementById("rowBlock");
+                var clnBlockN = clnBlock.cloneNode(true);
+                Row.appendChild(clnBlockN);
+            }
+
+            function BtnAdd(abc){
+                var a = abc.previousElementSibling;
+                console.log(a);
+                a.value = parseInt(a.value) + 1;
+                // console.log(a);
+            }
+            function BtnSubs(xyz){
+                var b = xyz.nextElementSibling;
+                console.log(b);
+                b.value = parseInt(b.value) - 1;
+            }
+            
+
+        </script>
+    </body>
+
+</html>

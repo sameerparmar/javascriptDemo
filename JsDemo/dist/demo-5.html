@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./images/favicon.ico">
+
+    <title>JS Tutorial</title>
+    <link rel="stylesheet" href="css/vendor.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+    <body>
+        <div class="js-main-wrapper">
+            <header class="js-side-nav">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-wrapper">
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Demo 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-2.html">Demo 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-3.html">Demo 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-4.html">Demo 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-5.html">Demo 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-6.html">Demo 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-7.html">Demo 7</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-8.html">Demo 8</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-9.html">Demo 9</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-10.html">
+                                Demo 10
+                                <small class="d-block">Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-11.html">
+                                Demo 11
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-12.html">
+                                Demo 12
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-13.html">
+                                Demo 13
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="demo-14.html">
+                                Demo 14
+                                <small class="d-block">Double Loop</small>
+                            </a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+    
+        </nav>
+</header>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 5: Add Dropdown menu and make Time Converter.</h2>
+                        <p class="text-black-50">Add Dropdown menu to Celsius to Fahrenheit converter where user can select time converter. Make time converter - from Second to Minute and set default seconds value to 3600.
+                        </p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5>Method 1</h5>
+                                
+                                <div class="row">
+                                    <div class="col-lg-12 mb-3">
+                                        <select name="" id="mySelect" onchange="myConverter()" class="form-control ">
+                                            <option value="temprature">Temprature</option>
+                                            <option value="time">Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        
+                                        <input type="text" oninput="calculateInput1Data()" value="0" class="form-control" id="input1">
+                                        <select name="" id="selectSub1" class="form-control " disabled>
+                                            <option value="celsius">Celsius</option>
+                                            <option value="second">Second</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <input type="text" oninput="calculateInput2Data()" value="0" class="form-control" id="input2">
+                                        <select name="" id="selectSub2" class="form-control" disabled>
+                                            <option value="fahrenheit">Fahrenheit</option>
+                                            <option value="minute">Minute</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <script src="js/app.js"></script>
+<script src="js/vendor.js"></script>
+        <script>
+            
+            var mS = document.getElementById("mySelect");
+            var sS1 = document.getElementById("selectSub1");
+            var sS2 = document.getElementById("selectSub2");
+            var inp1 = document.getElementById("input1");
+            var inp2 = document.getElementById("input2");
+
+            function myConverter(){
+                console.log(mS.value);
+                if (mS.value === 'time'){
+                    sS1.value = 'second';
+                    sS2.value = 'minute';
+                    inp1.value = 3600;
+                    // var minV = (inp1.value / 60) ;
+                    // inp2.value = minV ;
+                    inp2.value = 60 ;
+                    
+                }else{
+                    sS1.value = 'celsius';
+                    sS2.value = 'fahrenheit';
+                    inp1.value = 0;
+                    // var fernV = (inp1.value * 9/5) + 32;
+                    // inp2.value = fernV ;
+                    inp2.value = 32 ;  
+                }
+            }
+
+            function calculateInput1Data(){
+               
+                if (mS.value === 'time'){
+                    // console.log( 'time');
+                    var minV = (inp1.value / 60) ;
+                    inp2.value = minV ;
+
+                }else{
+                    // console.log( 'temprature');
+                    var fernV = (inp1.value * 9/5) + 32;
+                    inp2.value = fernV ;
+                }
+            }
+
+            function calculateInput2Data(){
+                if (mS.value === 'time'){
+                    // console.log( 'time');
+                    var secV = (inp2.value * 60) ;
+                    inp1.value = secV ;
+
+                }else{
+                    // console.log( 'temprature');
+                    var celV = (inp2.value - 32) * 5/9;
+                    inp1.value = celV ;
+                }
+            }
+
+            
+            
+            
+
+        </script>
+    </body>
+
+</html>

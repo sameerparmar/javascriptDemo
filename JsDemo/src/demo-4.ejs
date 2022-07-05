@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    <body>
+        <div class="js-main-wrapper">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 4</h2>
+                        <p class="text-black-50">Celsius to Fahrenheit converter.</p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5>Method 1</h5>
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 mb-3">
+                                        
+                                        <input type="text" onkeyup="cel2fren()" value="0" class="form-control" id="inputCel">
+                                        <select name="" id="" class="form-control " disabled>
+                                            <option value="1">Celsius</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <input type="text" onkeyup="fren2cel()" value="0" class="form-control" id="inputFer">
+                                        <select name="" id="" class="form-control" disabled>
+                                            <option value="1">Fahrenheit</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <hr class=" mb-5">
+
+                                <h5>Method 2 <small class="mute">Using If else condition</small></h5>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-3">
+                                        
+                                        <input type="text" onkeyup="cel2frenfun('cel')" value="0" class="form-control" id="inputCel2">
+                                        <select name="" id="" class="form-control " disabled>
+                                            <option value="1">Celsius</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6 mb-3">
+                                        <input type="text" onkeyup="cel2frenfun('feh')" value="0" class="form-control" id="inputFer2">
+                                        <select name="" id="" class="form-control" disabled>
+                                            <option value="1">Fahrenheit</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+            var cel = document.getElementById("inputCel");
+            var fer = document.getElementById("inputFer");
+
+            function cel2fren(){
+                var fernV = (cel.value * 9/5) + 32;
+                console.log("This Celsius to Frenhite :", fernV);
+                fer.value = fernV ;
+            }
+
+            function fren2cel(){
+                var celV = (fer.value - 32) * 5/9;
+                console.log("This Frenhite to Celsius :", celV);
+                cel.value = celV ;
+            }
+
+            var c = document.getElementById("inputCel2");
+            var f = document.getElementById("inputFer2");
+
+            //Method 2
+            function cel2frenfun(abc){
+                if(abc == 'cel'){
+                    var fernV = (c.value * 9/5) + 32;
+                    console.log("This Celsius to Frenhite :", fernV);
+                    f.value = fernV ;
+                }else{
+                    var celV = (f.value - 32) * 5/9;
+                    console.log("This Frenhite to Celsius :", celV);
+                    c.value = celV ;
+                }
+            }
+
+
+        </script>
+    </body>
+
+</html>

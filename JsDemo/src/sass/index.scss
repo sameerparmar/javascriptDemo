@@ -1,0 +1,173 @@
+.cm-bg-gray{
+    background-color: $bg-color;
+}
+// banner
+
+.cm-banner-sec{
+    .cm-banner-description{
+        @include media-breakpoint-up(xl){
+            width: 83%;
+            h1{
+               @include media-breakpoint-up(lg){
+                line-height: 78px;
+                font-size: 58px;
+               }
+            }
+            p{
+                margin: 1rem 0;
+                line-height: 40px;
+                    font-size: 1.5rem; 
+            }
+        }
+    }
+    .cm-bg-image{ 
+        position: relative;
+        z-index: 1; 
+       &::before{
+        content: '';
+        top: 15px;
+        right: 0px;
+        width: 200px;
+        height: 200px; 
+        background-size: cover;
+        background-image: url('../images/pictures/banner-round-1.svg');
+        position: absolute; 
+        z-index: -1;
+        @include media-breakpoint-up(xl){
+            top: 45px;
+            right: -10px;
+            width: 300px;
+            height: 300px;
+        }
+        @include media-breakpoint-up(xxl){
+            right: -80px;
+            width: 400px;
+            height: 400px;
+        }
+       }
+       img{
+        animation: appBounce 2s infinite alternate; 
+       }
+    }
+}
+@keyframes appBounce {
+    0% {
+        transform: translateY(-0px);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+// cm-process
+
+.cm-process{
+    .process-block{
+        background-color: #F7F7F7;
+        padding: 1.5rem 1rem;
+        border-radius: $border-radius;
+        text-align: center;
+        img{
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        h4{
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        p{
+            color: $text-light;
+        }
+    }
+}
+
+
+// slider block
+
+.cm-slider-block{
+    background: url('../images/pictures/bg-slider.png');
+    background-position: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(md){
+    background-size: 100%;
+    background-size: auto;
+    }
+    .container-12{ 
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        @include media-breakpoint-up(xl){
+            max-width: 1200px;
+        }
+        .swiper-container {
+            width: 100%;  
+          }
+    
+          .swiper-slide {
+            background-position: center;
+            background-size: cover; 
+            height: 100%;
+            margin: 5rem auto;
+          }
+    
+          .swiper-slide img {
+            display: block;
+            width: 100%; 
+            border-radius: 10px;
+            box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.16);
+            @include media-breakpoint-up(lg){
+                border-radius: 40px;
+            }
+          }
+    }
+    
+}
+
+// give away block
+
+.cm-giveaway{
+    .cm-give-block{
+        width: 100%;
+        @include media-breakpoint-up(xl){
+            width: 70%; 
+        }
+    }
+    .display-tab{
+        display: none;
+        @include media-breakpoint-only(md){
+            display: block;
+        }
+    }
+}
+.bg-pattern{
+    background: url('../images/pictures/pattern.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    @include media-breakpoint-up(md){
+        background-size: cover;
+    }
+
+}
+ 
+.swiper-pagination-bullet-active{
+    background:$primary;
+}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right{
+    background-image:none;
+}
+ 
+.cm-download-block{
+    width: 100%;
+    @include media-breakpoint-up(xl){
+        width: 70%; 
+    }
+}
+.cm-image-fulid{
+    width: 100%;
+    margin-top: 1rem;
+    @include media-breakpoint-up(xl){
+        width: 70%;
+        margin: 0;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 9: Increment Decrement Value.</h2>
+                        <p class="text-black-50">Increment Decrement value on button click. </p>
+                        
+                        <hr class=" mb-5">
+                        
+                        <div class="row" id="rowBlock">
+                            <div class="col-lg-3 cln-block" id="clnBlock">
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-outline-secondary btn-sub" type="button" onclick="BtnSubs(id)" id="btn-sub">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="text" class="form-control text-center" placeholder="" id="inputBox" value="0">
+                                    <button class="btn btn-outline-secondary btn-add" type="button" onclick="BtnAdd(id)" id="btn-add">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:;" onclick="cloneFun()" class="btn btn-primary text-white mt-3">Add New</a>
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+
+                // var btnAdd = document.getElementById("btn-add");
+
+            var i = 0 ;
+
+            function cloneFun(){
+                var clnBlock = document.getElementById('clnBlock');
+                var Row = document.getElementById("rowBlock");
+                // var input = clnBlock.querySelector(".form-control");
+                var clnBlockN = clnBlock.cloneNode(true);
+                i++;
+                clnBlockN.id =  clnBlockN.id + i;
+                Row.appendChild(clnBlockN);
+                var ab1 = clnBlockN.children[0];
+                console.log(ab1.children[0]);
+                ab1.children[0].id = "btn-sub" + i;
+                ab1.children[1].id = "inputBox" + i;
+                ab1.children[1].value = 0;
+                ab1.children[2].id = "btn-add" + i;
+                // var btnSub = ab1.children.querySelector("#btn-sub");
+                // btnSub.id = "btn-sub" + i;
+            }
+
+            function BtnAdd(ele){
+                // console.log(ele);
+                var inputId = ele.replace("btn-add", "")
+                var input = document.getElementById("inputBox" + inputId);
+                console.log(input);
+                input.value = parseInt(input.value) + 1;
+            }
+            function BtnSubs(ele){
+                // console.log(ele);
+                var inputId = ele.replace("btn-sub" , "");
+                var input = document.getElementById("inputBox" + inputId)
+                console.log(input);
+                input.value = parseInt(input.value) - 1;
+            }
+            
+
+        </script>
+    </body>
+
+</html>

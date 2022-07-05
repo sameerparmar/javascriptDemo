@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 10: Loop</h2>
+                        
+                        <hr class=" mb-5">
+                        <h5 class="mb-2">Min and Max Number </h5>
+                        <div class="row" >
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" value="" id="inputMin" onkeyup="printNum()" placeholder="Minimum Value">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" value="" id="inputMax" onkeyup="printNum()" placeholder="Maximum Value">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div id="r1"></div>
+                                <div id="oddNumber"></div>
+                                <div id="evenNumber"></div>
+                            </div>
+                        </div>
+                        
+                        <hr class=" mb-5">
+                        <h5 class="mb-2">Table Print </h5>
+
+                        <div class="row" >
+                            <div class="col-md-6">
+                                <div class="row mb-3">
+                                    <div class="col-4">
+                                        <input type="number" class="form-control" value="" id="inputTable" onkeyup="tablePrint()" placeholder="Table">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="number" class="form-control" value="1" id="inputTableStart" onkeyup="tablePrint()" placeholder="Table Start">
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="number" class="form-control" value="1" id="inputTableEnd" onkeyup="tablePrint()" placeholder="Table End">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div id="tableView"></div>
+                            </div>
+                        </div>
+
+                        <hr class=" mb-5">
+                        <h5 class="mb-2">Car Name Print with array </h5>
+
+                        <div class="row" >
+                            
+
+                            <div class="col-md-12">
+                                <div id="carNameView"></div>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+
+            //min max value print function
+            function printNum(){
+                var inputMin = document.getElementById("inputMin").value;
+                var inputMax = document.getElementById("inputMax").value;
+                inputMin = parseInt(inputMin);
+                inputMax = parseInt(inputMax);
+                console.log("Min Value is: " + inputMin + " & Max Value is: " + inputMax );
+                
+                // console.log(inputMax);
+                var R = '';
+                var O = '';
+                var E = '';
+                
+                for(var i = inputMin; i <= inputMax; i++){
+                    R =  R + i  + ", ";
+                    if( i%2 ){
+                        O =  O + i + ", ";
+                    }
+                    else{
+                        E = E + i + ", "
+                    }
+                }
+                document.getElementById("r1").innerHTML = "<p class='mb-3 text-dark'>" + R + "</p>";
+                document.getElementById("oddNumber").innerHTML = "<h6 class='mb-0'>Odd Number: </h6> <p class='text-info'>" + O + "</p>";
+                document.getElementById("evenNumber").innerHTML = "<h6 class='mb-0'>Even Number: </h6> <p class='text-info'>" + E + "</p>";
+                
+            }
+
+            //table function
+            function tablePrint(){
+                var tableInput = document.getElementById("inputTable");
+                var tableStartInput = document.getElementById("inputTableStart");
+                var tableEndInput = document.getElementById("inputTableEnd");
+
+                var tableResult = "";
+
+                for(i = tableStartInput.value; i <= tableEndInput.value; i++ ){
+                    tableResult += tableInput.value + ' x ' +  i + ' = ' + (tableInput.value * i) + "<br>";
+                }
+
+                document.getElementById("tableView").innerHTML = tableResult;
+
+            }
+
+            // object function
+            var carName = ["FIAT", "BMW", "FORD", "MARUTI", "TATA", "AUDI"];
+            
+            var carResult = "";
+
+            for( i=0; i < carName.length; i++){
+                carResult += carName[i] + "<br>";
+            }
+            
+            document.getElementById("carNameView").innerHTML = carResult;
+
+            
+        </script>
+    </body>
+
+</html>

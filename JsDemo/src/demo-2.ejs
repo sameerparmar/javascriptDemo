@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    <body>
+        <div class="js-main-wrapper">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 2</h2>
+                        <p class="text-black-50">Show / Hide HTML tag on button click.</p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Method 1</h5>
+                                
+                                <div class="d-flex my-3">
+                                    <a href="javascript:void((0);" onclick="showText()" id="btnShow" class="btn btn-primary me-2 text-white">Show</a>
+                                    <a href="javascript:void((0);" onclick="hideText()" id="btnHide" class="btn btn-dark me-2">Hide</a>
+                                    <a href="javascript:void((0);" onclick="toggleBtn()" id="btnToggle" class="btn btn-success me-2">Toggle</a>
+                                    <a href="javascript:void((0);" id="btnToggle2" class="btn btn-success me-2">Toggle2</a>
+                                </div>
+
+                                <p class="demoText" id="demoText">
+                                    Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                                </p>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+            
+            var btnS = document.getElementById("btnShow");
+            var btnH = document.getElementById("btnHide");
+            var btnT = document.getElementById("btnToggle");
+            var btnT2 = document.getElementById("btnToggle2");
+            var sText = document.getElementById("demoText");
+
+            //fuction Show text on click
+            function showText(){
+                sText.style.display = 'block';
+            }
+
+            //fuction Hide text on click
+            function hideText(){
+                sText.style.display = 'none';
+            }
+
+            //fuction toggle = call on button click
+            function toggleBtn(){
+                if(sText.style.display == 'none'){
+                    sText.style.display = 'block';
+                }else{
+                    sText.style.display = 'none';
+                }
+            }
+
+            //fuction toggle on click button
+            btnT2.onclick = function(){
+                if(sText.style.display !== 'none' ){
+                    sText.style.display = 'none';
+                } else{
+                    sText.style.display = 'block';
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

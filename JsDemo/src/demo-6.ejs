@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <% include /src/include/head.ejs %>
+    
+    <body>
+        
+        <div class="js-main-wrapper" id="demo-6">
+            <% include /src/include/header.ejs %>
+
+            <main class="js-main-content">
+                <header class="js-main-con-header"></header>
+                <section class="js-main-conainer">
+                    <div class="container">
+                        <h2 class="">Demo 6: RGB Color Chooser</h2>
+                        <p class="text-black-50">Create RGB color chooser which is showing Preview like above example.</p>
+                        
+                        <hr class=" mb-5">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                
+                                
+                                <div class="row">
+                                    <div class="col-lg-12 mb-5">
+                                        <div class="abc">
+                                            <div class="rgb-display-block" id="rgbDisplay"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-12">
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <div class="d-flex">
+                                                    <label class="text-nowrap me-1">R :</label>
+                                                    <input type="text" id="inputR" value="0" min="0" max="255" oninput="RGBclr()" class="form-contol w-50" >
+                                                </div>
+                                            </div>
+                                            <div class="col-9">
+                                                <!-- <div id="viewColorR" class="view-clr view-clr-r"></div> -->
+                                                <input type="range" id="viewColorR" value="0" min="0" max="255" oninput="RGBvclr()" class="view-clr view-clr-r" >
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <div class="d-flex">
+                                                    <label class="text-nowrap me-1">G :</label>
+                                                    <input type="text" id="inputG" value="0" min="0" max="255" oninput="RGBclr()" class="form-contol w-50">
+                                                </div>
+                                            </div>
+                                            <div class="col-9">
+                                                <!-- <div id="viewColorG" class="view-clr view-clr-g" ></div> -->
+                                                <input type="range" id="viewColorG" value="0" min="0" max="255" oninput="RGBvclr()" class="view-clr view-clr-g" >
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-3">
+                                                <div class="d-flex">
+                                                    <label class="text-nowrap me-1">B :</label>
+                                                    <input type="text" id="inputB" value="0" min="0" max="255" oninput="RGBclr()" class="form-contol w-50">
+                                                </div>
+                                            </div>
+                                            <div class="col-9">
+                                                <!-- <div id="viewColorB" class="view-clr view-clr-b" ></div> -->
+                                                <input type="range" id="viewColorB" value="0" min="0" max="255" oninput="RGBvclr()" class="view-clr view-clr-b" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+                </section>
+            </main>
+            
+        </div>
+        <% include /src/include/scripts.ejs %>
+        <script>
+            var DBC = document.getElementById("rgbDisplay");
+            
+            var RC = document.getElementById("inputR");
+            var GC = document.getElementById("inputG");
+            var BC = document.getElementById("inputB");
+            
+            var VR = document.getElementById("viewColorR");
+            var VG = document.getElementById("viewColorG");
+            var VB = document.getElementById("viewColorB");
+
+            
+            function RGBvclr(){
+               
+                RC.value = VR.value;
+                GC.value = VG.value;
+                BC.value = VB.value;
+
+                DBC.style.backgroundColor = 'rgb(' + RC.value + ',' +  GC.value + ',' + BC.value  + ')';
+            }
+            function RGBclr(){
+               
+                VR.value = RC.value;
+                VG.value = GC.value;
+                VB.value = BC.value;
+                
+                DBC.style.backgroundColor = 'rgb(' + RC.value + ',' +  GC.value + ',' + BC.value  + ')';
+            } 
+            
+            
+
+        </script>
+    </body>
+
+</html>
